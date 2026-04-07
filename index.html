@@ -79,14 +79,15 @@
                 
                 <select id="in_nama" onchange="updateIdentitas()">
                     <option value="">-- Pilih Nama Penyuluh --</option>
-                    <option>ABDUL RAHMAN, SP</option>
-                    <option>ANDI AGUS SALIM, SP</option>
-                    <option>HAMKA RAHMAN</option>
-                    <option>MUNIRAH</option>
-                    <option>M. ASRI</option>
-                    <option>RUDIANSYAH</option>
-                    <option>SAMAILA</option>
-                    <option>SITTI ROSIDA, SP</option>
+<option>ABDUL RAHMAN, SP</option>
+            <option>ANDI LUTHFIAH, SP</option>
+            <option>INDRA YULIANA, S.TP., M.Si.</option>
+            <option>NURUL FAHMI, S.P.</option>
+            <option>REZKI RAHAYU, S.P.</option>
+            <option>RIZAL SMITH ANUGRAH SYAM, S.P.</option>
+            <option>SUHADY HAMDAN, S.P.</option>
+            <option>SULFIANITA, S.P.</option>
+            <option>SURAHMAN, S.TP</option>
                 </select>
 
                 <input type="text" id="in_nip" oninput="sync()" placeholder="NIP akan terisi otomatis">
@@ -105,7 +106,7 @@
 
                 <input type="text" id="in_wkpp" oninput="sync()" placeholder="WKPP akan terisi otomatis">
                 <input type="text" id="in_kab" oninput="sync()" value="Wajo">
-                <input type="text" id="in_bpp" oninput="sync()"value="Bola">
+                <input type="text" id="in_bpp" oninput="sync()"placeholder="Kecamatan">
                 
                 <select id="in_bulan" onchange="sync()">
                     <option value="JANUARI">Januari</option>
@@ -244,15 +245,41 @@
 
 <script>
     const dataPenyuluh = {
-        "ABDUL RAHMAN, SP": { nip: "199009202020121001", wilayah: "DESA MANURUNG" },
-        "ANDI AGUS SALIM, SP": { nip: "198508162025211004", wilayah: "DESA LEMPONG" },
-        "HAMKA RAHMAN": { nip: "196807282014061001", wilayah: "KELURAHAN SOLO" },
-        "MUNIRAH": { nip: "198202092014062001", wilayah: "DESA BOLA" },
-        "M. ASRI": { nip: "197705012014061002", wilayah: "DESA BALIELO" },
-        "RUDIANSYAH": { nip: "198212202014061001", wilayah: "DESA PASIR PUTIH & DESA PATTANGNGAE" },
-        "SAMAILA": { nip: "197104142014061001", wilayah: "DESA SANRESENG ADE & DESA LATTIMU" },
-        "SITTI ROSIDA, SP": { nip: "19820315201406200", wilayah: "DESA UJUNG TANAH & DESA RAJA MAWELLANG" }
-    };
+       "ABDUL RAHMAN, SP": {
+    nip: "199009202020121001",
+    wilayah: "DESA MANURUNG"
+},
+"ANDI LUTHFIAH, SP": {
+    nip: "199307162020122003",
+    wilayah: "DESA MANNAGAE & DESA ASSORAJANG"
+},
+"INDRA YULIANA, S.TP., M.Si.": {
+    nip: "199307062020122001",
+    wilayah: "DESA ALEWADENG"
+},
+"NURUL FAHMI, S.P.": {
+    nip: "198911142020122002",
+    wilayah: "DESA BOTTOBENTENG & DESA RUMPIA"
+},
+"REZKI RAHAYU, S.P.": {
+    nip: "199507052020122003",
+    wilayah: "KELURAHAN MAPPADAELO"
+},
+"RIZAL SMITH ANUGRAH SYAM, S.P.": {
+    nip: "199005152020121001",
+    wilayah: "DESA WORONGNGE"
+},
+"SUHADY HAMDAN, S.P.": {
+    nip: "199202072020121001",
+    wilayah: "DESA PASELLORENG & KELURAHAN GILIRENG"
+},
+"SULFIANITA, S.P.": {
+    nip: "199505082020122004",
+    wilayah: "DESA SIMPURSIA"
+},
+"SURAHMAN, S.TP": {
+    nip: "199203122020121003",
+    wilayah: "DESA BARANGMAMASE" } };
 
     function updateIdentitas() {
         const select = document.getElementById('in_nama');
