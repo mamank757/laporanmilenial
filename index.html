@@ -416,7 +416,7 @@
         btn.disabled = true;
 
        try {
-            Anda adalah Penyuluh Pertanian profesional. Buat laporan bulanan formal standar Kementerian Pertanian berdasarkan data berikut:
+            const prompt = `Anda adalah Penyuluh Pertanian profesional. Buat laporan bulanan formal standar Kementerian Pertanian berdasarkan data berikut:
 
 DATA: ${JSON.stringify(sel)}
 LOKASI: BPP ${document.getElementById('in_bpp').value}, ${document.getElementById('in_kab').value}
@@ -453,8 +453,9 @@ KETENTUAN ISI:
      * jika kendala KOSONG → biarkan kosong (jangan diisi)
 
 4. kesimp: 2 paragraf (\n\n)
-   - Paragraf 1: capaian kinerja
-   - Paragraf 2: kendala & evaluasi
+- Paragraf 1: capaian kinerja
+- Paragraf 2: kendala & evaluasi
+`;
             const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
                 method: "POST",
                 headers: { "Content-Type": "application/json", "Authorization": `Bearer ${apiKey}` },
