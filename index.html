@@ -456,7 +456,7 @@ PENTING: Output wajib JSON murni tanpa teks pengantar apapun di luar bracket:
             const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
                 method: "POST",
                 headers: { "Content-Type": "application/json", "Authorization": `Bearer ${apiKey}` },
-                body: JSON.stringify({ model: "llama-3.3-70b-versatile", messages: [{ role: "user", content: prompt }], response_format: { type: "json_object" } })
+                body: JSON.stringify({ model: "llama-3.1-8b-instant", messages: [{ role: "user", content: prompt }], response_format: { type: "json_object" } })
             });
             const data = await res.json();
             const obj = JSON.parse(data.choices[0].message.content);
