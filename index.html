@@ -560,7 +560,7 @@ function sync() {
     document.getElementById('out_nip_sig2').innerText = nip || "-";
     
     // 3. Update Data Koordinator (SINKRONISASI NIP DI SINI)
-    document.getElementById('out_nama_koor').innerText = val('in_nama_koor').toUpperCase() || 'NAMA KOORDINATOR';
+    document.getElementById('out_nama_koor').innerText = val('in_nama_koor') || 'NAMA KOORDINATOR';
     document.getElementById('out_nip_koor').innerText = val('in_nip_koor') || '-';
     
     // 4. Update BAB II Pembahasan
