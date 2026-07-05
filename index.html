@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        
         body { background: #0f172a; color: #f1f5f9; font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
         
        .page {
@@ -222,8 +223,8 @@
                 <label class="text-xs font-bold text-slate-400 uppercase mb-1">Data Penyuluh</label>
                <select id="in_nama" onchange="updateIdentitas()">
                    <option value="">-- Pilih Nama --</option>
-        <option>ABDUL RAHMAN, SP</option>
-                   <option>A. FATHUR MUH. ISHAQ B, S.ST., M.Si</option>
+                   <option>ABDUL RAHMAN, SP</option>
+        <option>A. FATHUR MUH. ISHAQ B, S.ST., M.Si</option>
     <option>ANDI LUTHFIAH, SP</option>
        <option>INDRA YULIANA, S.TP., M.Si.</option>
     <option>MIFTAHUL KHAIR, S.P.</option>
@@ -737,16 +738,6 @@ window.onload = () => {
     init();
     checkFirstVisit();
 };
-    // Fungsi untuk mencegah karakter link (&, <, >) dirender ulang sebagai HTML/entity
-function escapeHTML(str) {
-    if (!str) return "";
-    return str
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .trim();
-}
    async function generateAI() {
     const gasWebAppUrl = "https://script.google.com/macros/s/AKfycbwgMSw84fQbf0avNLsEB261u1pQC7yD8J0Qk_olBIYwQyvOaIYPBigfD1Ew9vJkDDgJ/exec"; 
     
@@ -838,7 +829,7 @@ PENTING: Output wajib JSON murni tanpa teks pengantar:
             const orig = sel.find(s => s.no == item.no);
 
             if(rCell && orig) {
-                rCell.innerHTML = `<div><b>${escapeHTML(item.rincian)}</b></div>${orig.link ? `<div style="font-size:7pt; color:blue; margin-top:5px; word-break:break-all;">Eviden: ${escapeHTML(orig.link)}</div>` : ""}`;
+                rCell.innerHTML = `<div><b>${item.rincian}</b></div>${orig.link ? `<div style="font-size:7pt; color:blue; margin-top:5px;">Eviden: ${orig.link}</div>` : ""}`;
                 kCell.innerText = orig.user_kendala || item.kendala;
                 tCell.innerText = item.tindak;
             }
@@ -847,11 +838,7 @@ PENTING: Output wajib JSON murni tanpa teks pengantar:
         document.querySelectorAll('.italic.text-gray-400').forEach(el => el.classList.remove('italic', 'text-gray-400'));
         alert("✅ Laporan Berhasil Disusun!");
         
-        requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-        setTimeout(() => { if (typeof applySmartBreak === 'function') applySmartBreak(); }, 300);
-    });
-});
+        setTimeout(() => { if(typeof applySmartBreak === 'function') applySmartBreak(); }, 800);
 
     } catch (e) {
         console.error("Detail Error:", e);
